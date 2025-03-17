@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package streaming;
+
+// Define a gRPC service
+service Calculator {
+  // Client streaming RPC: Receives multiple numbers and returns their sum
+  rpc SumStream (stream SumRequest) returns (SumResponse);
+}
+
+// Request and Response messages
+message SumRequest {
+  int32 number = 1;
+}
+
+message SumResponse {
+  int32 result = 1;
+}
+

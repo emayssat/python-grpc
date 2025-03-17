@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package stock_chat;
+
+// Define a gRPC service for interactive stock trading
+service StockChat {
+  rpc Chat (stream StockRequest) returns (stream StockResponse);
+}
+
+// Client message: Request stock information
+message StockRequest {
+  string ticker = 1;
+}
+
+// Server message: Response with stock price
+message StockResponse {
+  string ticker = 1;
+  float price = 2;
+  string message = 3;
+  string timestamp = 4;
+}
+

@@ -1,0 +1,3 @@
+__pycache__
+stock_pb2.py
+stock_pb2_grpc.py
